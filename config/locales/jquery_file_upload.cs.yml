@@ -1,0 +1,25 @@
+---
+cs:
+  jquery_file_upload:
+    bootstrap_plus_ui:
+      download_image:
+        cancel: Zrušit
+        delete: Smazat
+        error: Error
+      download_video:
+        cancel: Zrušit
+        delete: Smazat
+        error: Error
+      form:
+        add_files: Přidat soubory
+        cancel: Zrušit
+        delete: Smazat
+        start: Start
+      upload_image:
+        cancel: Zrušit
+        processing: Nahrávám
+        start: Start
+      upload_video:
+        cancel: Zrušit
+        processing: Nahrávám
+        start: Start

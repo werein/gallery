@@ -1,0 +1,45 @@
+%section.col-md-12
+  = manage_icons @exposition, class: 'btn-group-outer', button_class: 'btn-small'
+  %header.title.row
+    .col-md-9
+      %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
+    .manage.col-md-3.right{ style: ('display:none' unless manage?) }
+      = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
+      = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
+    .col-md-12
+      = @exposition.description.try(:html_safe)
+  .tab-content
+    #new_pictures.tab-pane
+      = render 'gallery/images/new'
+
+    #new_video.tab-pane
+      = render 'gallery/videos/new'
+  
+  #expositions
+    - @exposition.children.each_slice 4 do |expositions|
+      .row= render expositions, col: 'col-md-3'
+
+  #images
+    - @images.each_slice 3 do |images|
+      .row= render images , col: 'col-md-4'
+  #images-paginator= paginate @images, param_name: 'images_page', paginated: 'images' if @images
+
+  #videos
+    - @videos.each_slice 2 do |videos|
+      .row= render videos , col: 'col-md-6'
+  #videos-paginator= paginate @videos, param_name: 'videos_page', paginated: 'videos' if @videos
+
+  - if can? :create, Gallery::Image
+    = render 'jquery_file_upload/bootstrap_plus_ui/upload_image'
+    = render 'jquery_file_upload/bootstrap_plus_ui/download_image'
+  - if can? :create, Gallery::Video
+    = render 'jquery_file_upload/bootstrap_plus_ui/upload_video'
+    = render 'jquery_file_upload/bootstrap_plus_ui/download_video'
+
+= render 'blueimp_gallery/controls'
+
+- content_for :postscript do
+  = javascript_include_tag 'jquery-file-upload/basic-plus-ui'
+  / The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9
+  /[if (gte IE 8)&amp;(lt IE 10)]
+    = javascript_include_tag "jquery-file-upload/cors/jquery.xdr-transport"

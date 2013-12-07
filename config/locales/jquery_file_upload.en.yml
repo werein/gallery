@@ -1,0 +1,25 @@
+---
+en:
+  jquery_file_upload:
+    bootstrap_plus_ui:
+      download_image:
+        cancel: Cancel
+        delete: Delete
+        error: Error
+      download_video:
+        cancel: Cancel
+        delete: Delete
+        error: Error
+      form:
+        add_files: Add files
+        cancel: Cancel
+        delete: Delete
+        start: Start
+      upload_image:
+        cancel: Cancel
+        processing: Processing
+        start: Start
+      upload_video:
+        cancel: Cancel
+        processing: Processing
+        start: Start

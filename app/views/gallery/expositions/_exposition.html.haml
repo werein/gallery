@@ -1,0 +1,5 @@
+%article.exposition{class: (col if defined? col)}
+  %header.title
+    = manage_icons exposition, except: [:new, :list]
+    %h1= editable exposition, :title, nested: :translations, nid: exposition.translation.id, e: link_to(exposition.title, exposition)
+  = link_to image_tag(exposition.cover.square.thumb, class: 'img-responsive'), exposition if exposition.cover?

@@ -1,0 +1,18 @@
+.video{class: (col if defined? col)}
+  = manage_icons [video.exposition, video], remote: true, except: [:new, :list]
+  %video.video-js.vjs-default-skin{id:"video_#{video.id}", controls: '', preload: 'auto', width: 'auto', height: 'auto', poster: video.thumb.landscape.thumb, data: { setup: '{ "plugins": { "resolutionSelector": "true" }}' }}
+    %source{src: video.video.mp4, type: 'video/mp4', data: { res: 'Original'}}
+    - if video.video.mp4.p1080.file.exists?
+      %source{src: video.video.mp4.p1080, type: 'video/mp4', data: { res: '1080p'}}
+    - if video.video.mp4.p720.file.exists?
+      %source{src: video.video.mp4.p720, type: 'video/mp4', data: { res: '720p'}}
+    %source{src: video.video.webm, type: 'video/webm', data: { res: 'Original'}}
+    - if video.video.webm.p1080.file.exists?
+      %source{src: video.video.webm.p1080, type: 'video/webm', data: { res: '1080p'}}
+    - if video.video.webm.p720.file.exists?
+      %source{src: video.video.webm.p720, type: 'video/webm', data: { res: '720p'}}
+    %source{src: video.video.ogv, type: 'video/ogg', data: { res: 'Original'}}
+    - if video.video.ogv.p1080.file.exists?
+      %source{src: video.video.ogv.p1080, type: 'video/ogg', data: { res: '1080p'}}
+    - if video.video.ogv.p720.file.exists?
+      %source{src: video.video.ogv.p720, type: 'video/ogg', data: { res: '720p'}}

@@ -1,0 +1,25 @@
+= rails_admin_alert @exposition
+
+= javascript_include_tag 'ckeditor/init'
+= simple_nested_form_for @exposition, nested_wrapper: :bootstrap3_horizontal do |f|
+  = render 'core/shared/errors', object: @exposition
+
+  = f.input :cover
+  = f.input :parent_id, collection: @exposition.parent_enum
+
+  %header
+    %h1= t '.translations.title'
+    = f.link_to_add gt('plus', t('.translations.new')), :translations, class: 'translations btn btn-info pull-right'
+  = localization_bar @exposition
+  
+  .tab-content.translations
+    = f.simple_fields_for :translations, nested_wrapper: false do |t|
+      .fields.tab-pane{id: "translation_#{t.index}", class: ("active" if t.index.eql?(0))}
+        .right
+          = t.link_to_remove si('btn btn-danger','glyphicon glyphicon-remove')
+        = t.input :title
+        = t.input :slug
+        = t.input :locale
+        = t.input :description, as: :ckeditor
+        
+  = f.button :submit, t('.submit'), class: 'btn btn-block btn-large btn-info'

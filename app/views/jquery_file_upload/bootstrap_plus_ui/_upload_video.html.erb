@@ -1,0 +1,36 @@
+<!-- The template to display files available for upload -->
+<script id="template-upload-video" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <div class="row template-upload fade">
+        <div class="col-md-1">
+            <span class="preview"></span>
+        </div>
+        <div class="col-md-3">
+            <p class="name">{%=file.name%}</p>
+            <strong class="error text-danger"></strong>
+        </div>
+        <div class="col-md-1">
+            <p class="size"><%= t '.processing' %></p>
+        </div>
+        <div class="col-md-4">
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+        </div>
+        <div class="col-md-3 right">
+            <div class="btn-group">
+                {% if (!i && !o.options.autoUpload) { %}
+                    <button class="btn btn-primary start" disabled>
+                        <i class="glyphicon glyphicon-upload"></i>
+                        <span><%= t '.start' %></span>
+                    </button>
+                {% } %}
+                {% if (!i) { %}
+                    <button class="btn btn-warning cancel">
+                        <i class="glyphicon glyphicon-ban-circle"></i>
+                        <span><%= t '.cancel' %></span>
+                    </button>
+                {% } %}
+            </div>
+        </div>
+    </div>
+{% } %}
+</script>

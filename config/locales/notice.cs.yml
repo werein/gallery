@@ -1,0 +1,17 @@
+---
+cs:
+  notice:
+    success:
+      gallery:
+        exposition:
+          create: Expozice vytvořena
+          destroy: Expozice smazána
+          update: Expozice aktualizována
+        image:
+          create: Obrázek vytvořen
+          destroy: Obrázek smazán
+          update: Obrázek aktualizován
+        video:
+          create: Video vytvořeno
+          destroy: Video smazáno
+          update: Video aktualizováno

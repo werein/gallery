@@ -1,0 +1,35 @@
+---
+en:
+  gallery:
+    expositions:
+      edit:
+        title: List of expositions
+      form:
+        submit: Submit
+        translations:
+          new: New translation
+          title: Translations
+      index:
+        title: List of expositions
+      new:
+        title: New exposition
+      show:
+        upload:
+          pictures: Pictures
+          videos: Videos
+    images:
+      edit:
+        title: Edit image
+      form:
+        submit: Submit
+        translations:
+          new: New translation
+          title: Translations
+    videos:
+      edit:
+        title: Edit video
+      form:
+        submit: Submit
+        translations:
+          new: New translation
+          title: Translations

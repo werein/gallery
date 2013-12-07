@@ -1,0 +1,7 @@
+%section#content.col-md-12
+  %header
+    %h1.title= t '.title'
+    = create_button Gallery::Exposition
+  .content
+    - @expositions.each_slice 3 do |expositions|
+      .row= render expositions , col: 'col-md-4'

@@ -1,0 +1,35 @@
+---
+cs:
+  gallery:
+    expositions:
+      edit:
+        title: Upravit expozici
+      form:
+        submit: Odeslat
+        translations:
+          new: Vytvořit překlad
+          title: Překlady
+      index:
+        title: Přehled expozicí
+      new:
+        title: Nová expozice
+      show:
+        upload:
+          pictures: Obrázky
+          videos: Videa
+    images:
+      edit:
+        title: Upravit obrázek
+      form:
+        submit: Odeslat
+        translations:
+          new: Vytvořit překlad
+          title: Překlady
+    videos:
+      edit:
+        title: Upravit video
+      form:
+        submit: Odeslat
+        translations:
+          new: Vytvořit překlad
+          title: Překlady
