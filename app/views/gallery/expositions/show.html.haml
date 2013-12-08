@@ -2,9 +2,9 @@
   = manage_icons @exposition, class: 'btn-group-outer', button_class: 'btn-small'
   .row
     %header.title
-      .col-md-9
+      .col-md-12
         %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
-      .manage.col-md-3.right{ style: ('display:none' unless manage?) }
+      .manage.col-md-3.pull-right{ style: ('display:none' unless manage?) }
         = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
         = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
       .col-md-12
