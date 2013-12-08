@@ -58,7 +58,7 @@ module Gallery
       end
       
       def exposition_params
-        params.require(:exposition).permit(:cover, :gallery_exposition_id, translations_attributes: [:id, :title, :locale, :description, :_destroy])
+        params.require(:exposition).permit(:cover, :parent_id, translations_attributes: [:id, :title, :slug, :locale, :description, :_destroy])
       end
   end
 end
