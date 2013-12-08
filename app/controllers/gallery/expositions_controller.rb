@@ -9,7 +9,7 @@ module Gallery
     respond_to :js, only: :show
 
     def index
-      @expositions = Exposition.with_translations(I18n.locale).roots
+      @expositions = Exposition.with_translations(I18n.locale).roots.latest
       respond_with @expositions
     end
 
