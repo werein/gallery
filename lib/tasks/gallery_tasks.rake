@@ -8,8 +8,8 @@ namespace :gallery do
     desc "Regenerate all images on expositions"
     task recreate_versions: :environment do 
       Gallery::Exposition.all.each do |i|
-        i.process_image_upload = true
-        i.image.recreate_versions!
+        i.process_cover_upload = true
+        i.cover.recreate_versions!
       end
     end
   end
