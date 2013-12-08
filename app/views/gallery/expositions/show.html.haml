@@ -1,20 +1,20 @@
 %section.col-md-12
   = manage_icons @exposition, class: 'btn-group-outer', button_class: 'btn-small'
-  %header.title.row
-    .col-md-9
-      %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
-    .manage.col-md-3.right{ style: ('display:none' unless manage?) }
-      = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
-      = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
-    .col-md-12
-      = @exposition.description.try(:html_safe)
+  .row
+    %header.title
+      .col-md-9
+        %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
+      .manage.col-md-3.right{ style: ('display:none' unless manage?) }
+        = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
+        = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
+      .col-md-12
+        = @exposition.description.try(:html_safe)
   .tab-content
     #new_pictures.tab-pane
       = render 'gallery/images/new'
 
     #new_video.tab-pane
       = render 'gallery/videos/new'
-  
   #expositions
     - @exposition.children.each_slice 4 do |expositions|
       .row= render expositions, col: 'col-md-3'
@@ -35,6 +35,11 @@
   - if can? :create, Gallery::Video
     = render 'jquery_file_upload/bootstrap_plus_ui/upload_video'
     = render 'jquery_file_upload/bootstrap_plus_ui/download_video'
+
+  - if @exposition.parent and @exposition.parent.localized?
+    = link_to t('.parent'), @exposition.parent, class: 'btn btn-default btn-sm btn-block'
+  - else
+    = link_to t('.main'), expositions_path, class: 'btn btn-default btn-sm btn-block'
 
 = render 'blueimp_gallery/controls'
 

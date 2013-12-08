@@ -14,6 +14,8 @@ en:
       new:
         title: New exposition
       show:
+        main: Main expositions
+        parent: Parent exposition
         upload:
           pictures: Pictures
           videos: Videos

@@ -14,6 +14,8 @@ cs:
       new:
         title: Nová expozice
       show:
+        main: Hlavní expozice
+        parent: Nadřazená expozice
         upload:
           pictures: Obrázky
           videos: Videa
