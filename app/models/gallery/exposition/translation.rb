@@ -1,6 +1,7 @@
 module Gallery
   class Exposition::Translation < Globalize::ActiveRecord::Translation 
     extend Enumerize
+    include Core::Concerns::Slugged
     validates :title, length: { maximum: 255 }, presence: true
     validates :locale, presence: true, uniqueness: { scope: :gallery_exposition_id }
     
