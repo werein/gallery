@@ -8,8 +8,10 @@ namespace :gallery do
     desc "Regenerate all images on expositions"
     task recreate_versions: :environment do 
       Gallery::Exposition.all.each do |i|
-        i.process_cover_upload = true
-        i.cover.recreate_versions!
+        if i.cover? and i.cover.file.exists?
+          i.process_cover_upload = true
+          i.cover.recreate_versions!
+        end
       end
     end
   end
@@ -18,8 +20,10 @@ namespace :gallery do
     desc "Regenerate all images on images"
     task recreate_versions: :environment do 
       Gallery::Image.all.each do |i|
-        i.process_image_upload = true
-        i.image.recreate_versions!
+        if i.image? and i.image.file.exists?
+          i.process_image_upload = true
+          i.image.recreate_versions!
+        end
       end
     end
   end
@@ -27,11 +31,15 @@ namespace :gallery do
   namespace :video do 
     desc "Regenerate all videos and thumbs on videos"
     task recreate_versions: :environment do 
-      Gallery::Video.all.each do |v|
-        i.process_video_upload = true
-        i.process_thumb_upload = true
-        v.video.recreate_versions!
-        v.thumb.recreate_versions!
+      Gallery::Video.all.each do |i|
+        if i.video? and i.video.file.exists?
+          i.process_video_upload = true
+          i.video.recreate_versions!
+        end
+        if i.thumb? and i.thumb.file.exists?
+          i.process_thumb_upload = true
+          i.thumb.recreate_versions!
+        end
       end
     end
   end
