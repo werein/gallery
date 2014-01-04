@@ -39,10 +39,5 @@ gem 'videojs',
   git: 'git@git.imin.cz:project/videojs.git'
 
 # Demo dependencies 
-gem 'ckeditor', git: 'https://github.com/galetahub/ckeditor.git', branch: 'master'
-gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git', branch: 'master'
-gem 'rails_admin_glyph_theme'
-gem 'compass-rails', '~> 2.0.alpha.0'
-gem 'bootstrap-sass', '~> 3.0.0.0'
-
+gem 'bootstrap-sass', '~> 3.0'
 gem "i18n-tasks", '~> 0.2'
