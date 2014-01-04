@@ -13,31 +13,38 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
+# Use head version of engines
 gem 'core', 
   branch: 'master',
   git: 'git@git.imin.cz:project/core.git'
 
-gem 'uploadable', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/uploadable.git'
-
-gem 'testable', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/testable.git'
-
-gem 'ckeditor-outsourced', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/ckeditor-outsourced.git'
-
 gem 'auth', 
   branch: 'master',
   git: 'git@git.imin.cz:project/auth.git'
+
+# Core dependencies
+gem 'ckeditor-outsourced', branch: 'master',
+  git: 'git@git.imin.cz:project/ckeditor-outsourced.git'
+
+gem 'uploadable', branch: 'master',
+  git: 'git@git.imin.cz:project/uploadable.git'
+
+gem 'extension-multiselect', branch: 'master',
+  git: 'git@git.imin.cz:project/extension-multiselect.git'
+
+gem 'sidrjs-rails', branch: 'master',
+  git: 'git@git.imin.cz:project/sidrjs-rails.git'
 
 # Gallery dependencies
 gem 'videojs', 
   branch: 'master',
   git: 'git@git.imin.cz:project/videojs.git'
 
+# Test dependencies
+gem 'testable', 
+  branch: 'master',
+  git: 'git@git.imin.cz:project/testable.git'
+
 # Demo dependencies 
 gem 'bootstrap-sass', '~> 3.0'
-gem "i18n-tasks", '~> 0.2'
+gem 'i18n-tasks', '~> 0.2'
