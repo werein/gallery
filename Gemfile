@@ -46,5 +46,6 @@ gem 'testable',
   git: 'git@git.imin.cz:project/testable.git'
 
 # Demo dependencies 
+gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'bootstrap-sass', '~> 3.0'
 gem 'i18n-tasks', '~> 0.2'
