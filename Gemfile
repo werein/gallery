@@ -47,5 +47,5 @@ gem 'testable',
 
 # Demo dependencies 
 gem 'compass-rails', github: 'Compass/compass-rails'
-gem 'bootstrap-sass', '~> 3.0'
+gem 'bootstrap-sass', '~> 3.1'
 gem 'i18n-tasks', '~> 0.2'
