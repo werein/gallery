@@ -1,0 +1,63 @@
+---
+en:
+  activerecord:
+    attributes:
+      gallery/exposition:
+        active: Active
+        ancestry: Ancestry
+        cover: Cover
+        created_at: Created at
+        position: Position
+        updated_at: Updated at
+      gallery/exposition/translation:
+        created_at: Created at
+        description: Description
+        locale: Locale
+        slug: Slug
+        title: Title
+        updated_at: Updated at
+      gallery/image:
+        created_at: Created at
+        exposition: Exposition
+        image: Image
+        updated_at: Updated at
+      gallery/image/translation:
+        created_at: Created at
+        description: Description
+        locale: Locale
+        title: Title
+        updated_at: Updated at
+      gallery/video:
+        created_at: Created at
+        exposition: Exposition
+        thumb: Thumbnail
+        updated_at: Updated at
+        video: Video
+      gallery/video/translation:
+        created_at: Created at
+        description: Description
+        locale: Locale
+        title: Title
+        updated_at: Updated at
+    models:
+      gallery:
+        one: gallery
+        other: gallery
+      gallery/exposition:
+        one: Exposition
+        other: Expositions
+      gallery/exposition/translation:
+        one: Translation
+        other: Translations
+      gallery/image:
+        one: Image
+        other: Images
+      gallery/image/translation:
+        one: Translation
+        other: Translations
+      gallery/video:
+        one: Video
+        other: Videos
+      gallery/video/translation:
+        one: Translation
+        other: Translations

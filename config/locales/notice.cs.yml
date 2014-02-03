@@ -1,17 +1,24 @@
 ---
 cs:
-  notice:
-    success:
-      gallery:
-        exposition:
-          create: Expozice vytvořena
-          destroy: Expozice smazána
-          update: Expozice aktualizována
-        image:
-          create: Obrázek vytvořen
-          destroy: Obrázek smazán
-          update: Obrázek aktualizován
-        video:
-          create: Video vytvořeno
-          destroy: Video smazáno
-          update: Video aktualizováno
+  gallery:
+    expositions:
+      create:
+        notice: Expozice vytvořena
+      destroy:
+        notice: Expozice smazána
+      update:
+        notice: Expozice aktualizována
+    images:
+      create:
+        notice: Obrázek vytvořen
+      destroy:
+        notice: Obrázek smazán
+      update:
+        notice: Obrázek aktualizován
+    videos:
+      create:
+        notice: Video vytvořeno
+      destroy:
+        notice: Video smazáno
+      update:
+        notice: Video aktualizováno

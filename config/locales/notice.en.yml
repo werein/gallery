@@ -1,17 +1,24 @@
 ---
 en:
-  notice:
-    success:
-      gallery:
-        exposition:
-          create: Exposition was successfully created.
-          destroy: Exposition was successfully deleted.
-          update: Exposition was successfully updated.
-        image:
-          create: Image was successfully created.
-          destroy: Image was successfully deleted.
-          update: Image was successfully updated.
-        video:
-          create: Video was successfully created.
-          destroy: Video was successfully deleted.
-          update: Video was successfully updated.
+  gallery:
+    expositions:
+      create:
+        notice: Exposition was successfully created.
+      destroy:
+        notice: Exposition was successfully deleted.
+      update:
+        notice: Exposition was successfully updated.
+    images:
+      create:
+        notice: Image was successfully created.
+      destroy:
+        notice: Image was successfully deleted.
+      update:
+        notice: Image was successfully updated.
+    videos:
+      create:
+        notice: Video was successfully created.
+      destroy:
+        notice: Video was successfully deleted.
+      update:
+        notice: Video was successfully updated.

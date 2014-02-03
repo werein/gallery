@@ -18,7 +18,7 @@ module Gallery
       if @video.save
         response = @video.to_jqfu_response
         respond_to do |format|
-          flash[:notice] = t(:'notice.success.gallery.video.create')
+          flash[:notice] = t('.notice')
           format.html { render  json: response,
                                 content_type: 'text/html',
                                 layout: false }
@@ -32,7 +32,7 @@ module Gallery
     def update
       respond_with(@video) do |format|
         if @video.update(video_params)
-          format.html { redirect_to @video.exposition, notice: t(:'notice.success.gallery.video.update') }
+          format.html { redirect_to @video.exposition, notice: t('.notice') }
           format.json
         else
           format.html { render action: :edit }
@@ -42,7 +42,7 @@ module Gallery
     end
 
     def destroy
-      flash[:notice] =  t(:'notice.success.gallery.video.destroy') if @video.destroy
+      flash[:notice] =  t('.notice') if @video.destroy
     end
 
     private

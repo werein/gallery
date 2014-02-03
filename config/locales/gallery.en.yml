@@ -19,6 +19,10 @@ en:
         upload:
           pictures: Pictures
           videos: Videos
+    image:
+      show:
+        cell:
+          title: Images
     images:
       edit:
         title: Edit image

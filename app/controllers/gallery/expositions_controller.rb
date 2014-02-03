@@ -35,17 +35,17 @@ module Gallery
 
     def create
       @exposition = Exposition.new(exposition_params)
-      flash[:notice] = t(:'notice.success.gallery.exposition.create') if @exposition.save
+      flash[:notice] = t('.notice') if @exposition.save
       respond_with @exposition
     end
 
     def update
-      flash[:notice] = t(:'notice.success.gallery.exposition.update') if @exposition.update(exposition_params)
+      flash[:notice] = t('.notice') if @exposition.update(exposition_params)
       respond_with @exposition
     end
 
     def destroy
-      redirect_to expositions_path, notice: t(:'notice.success.gallery.exposition.destroy') if @exposition.destroy
+      redirect_to expositions_path, notice: t('.notice') if @exposition.destroy
     end
 
     private

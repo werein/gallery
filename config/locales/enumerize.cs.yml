@@ -1,0 +1,23 @@
+---
+cs:
+  enumerize:
+    gallery/exposition/translation:
+      locale:
+        cs: Česky
+        de: Německy
+        en: Anglicky
+    gallery/image/translation:
+      locale:
+        cs: Česky
+        de: Německy
+        en: Anglicky
+    gallery/video/translation:
+      locale:
+        cs: Česky
+        de: Německy
+        en: Anglicky
+    locale:
+      locale:
+        cs: Česky
+        de: Německy
+        en: Anglicky

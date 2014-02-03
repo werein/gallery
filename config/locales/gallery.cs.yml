@@ -19,6 +19,10 @@ cs:
         upload:
           pictures: Obrázky
           videos: Videa
+    image:
+      show:
+        cell:
+          title: Obrázky
     images:
       edit:
         title: Upravit obrázek

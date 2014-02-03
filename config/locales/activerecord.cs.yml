@@ -1,0 +1,63 @@
+---
+cs:
+  activerecord:
+    attributes:
+      gallery/exposition:
+        active: Aktivní
+        ancestry: Nadřeazené
+        cover: Náhled
+        created_at: Vytvořeno
+        position: Pozice
+        updated_at: Aktualizováno
+      gallery/exposition/translation:
+        created_at: Vytvořeno
+        description: Popis
+        locale: Jazyk
+        slug: SEO url
+        title: Nadpis
+        updated_at: Aktualizováno
+      gallery/image:
+        created_at: Vytvořeno
+        exposition: Exposition
+        image: Image
+        updated_at: Aktualizováno
+      gallery/image/translation:
+        created_at: Vytvořeno
+        description: Popis
+        locale: Jazyk
+        title: Nadpis
+        updated_at: Aktualizováno
+      gallery/video:
+        created_at: Vytvořeno
+        exposition: Exposition
+        thumb: Thumbnail
+        updated_at: Aktualizováno
+        video: Video
+      gallery/video/translation:
+        created_at: Vytvořeno
+        description: Popis
+        locale: Jazyk
+        title: Nadpis
+        updated_at: Aktualizováno
+    models:
+      gallery:
+        one: galerie
+        other: galerie
+      gallery/exposition:
+        one: Výstava
+        other: Výstavy
+      gallery/exposition/translation:
+        one: Překlad
+        other: Překlady
+      gallery/image:
+        one: Obrázek
+        other: Obrázky
+      gallery/image/translation:
+        one: Překlad
+        other: Překlady
+      gallery/video:
+        one: Video
+        other: Videa
+      gallery/video/translation:
+        one: Překlad
+        other: Překlady
