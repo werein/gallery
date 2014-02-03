@@ -1,5 +1,7 @@
 require 'test_helper'
- 
+
+require_dependency "gallery/application_controller"
+
 module Gallery
   class StubbedController < ApplicationController
     def test_ability
