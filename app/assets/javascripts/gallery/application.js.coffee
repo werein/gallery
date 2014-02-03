@@ -13,6 +13,8 @@
 #= require video.dev
 #= require video-quality-selector
 #= require blueimp-gallery-all
+#= require jquery-file-upload/basic-plus-ui
+#= require jquery-file-upload/cors/jquery.xdr-transport
 
 linksContainer = $('body').on('click', 'a.gallery', (event) ->
   event = event or window.event

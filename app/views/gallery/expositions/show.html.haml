@@ -39,9 +39,3 @@
       = link_to t('.main'), expositions_path, class: 'btn btn-default btn-sm btn-block'
 
 = render 'blueimp_gallery/controls'
-
-- content_for :postscript do
-  = javascript_include_tag 'jquery-file-upload/basic-plus-ui'
-  / The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9
-  /[if (gte IE 8)&amp;(lt IE 10)]
-    = javascript_include_tag 'jquery-file-upload/cors/jquery.xdr-transport'
