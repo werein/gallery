@@ -14,6 +14,7 @@ module Gallery
     paginates_per 12
 
     scope :uploaded, -> { where.not(image: nil) }
+    scope :random, -> { order('RANDOM()') }
 
     def to_jqfu
       { url: image.url,

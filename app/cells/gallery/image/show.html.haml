@@ -1,0 +1,8 @@
+%section.cell.gallery-image.show
+  %header.center
+    %h2= t '.cell.title'
+  - @images.each do |image|
+    %article.image
+      %header
+        %h3= image.title
+      = image_tag image.image.square
