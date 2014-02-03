@@ -1,7 +1,7 @@
-%section#content.col-md-12
-  %header
-    %h1.title= t '.title'
+#content.col-md-12
+  %header.page-header.manage-header
+    %h1= t '.title'
     = create_button Gallery::Exposition
-  .content
+  #expositions
     - @expositions.each_slice 3 do |expositions|
       .row= render expositions , col: 'col-md-4'
