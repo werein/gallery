@@ -1,29 +1,26 @@
-#content.col-md-12
+%section#main-content
   %article.exposition
-    %header.page-header.manage-header
-      %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
-      = manage_icons @exposition
-      .manage.btn-create{class: ('hidden' unless manage?)}
-        = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
-        = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
+    %header.main
+      .content
+        %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
+        = manage_icons @exposition
+        .manage.btn-create{class: ('hidden' unless manage?)}
+          = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
+          = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
     .description= @exposition.description.try(:html_safe)
   .tab-content
     #new_pictures.tab-pane= render 'gallery/images/new'
     #new_video.tab-pane= render 'gallery/videos/new'
 
-  %section#expositions
-    - @exposition.children.each_slice 4 do |expositions|
-      .row= render expositions, col: 'col-md-3'
+  %section#expositions= render @exposition.children
 
   %section#images
-    - @images.each_slice 3 do |images|
-      .row= render images , col: 'col-md-4'
-  #images-paginator= paginate @images, param_name: 'images_page', paginated: 'images' if @images
+    = render @images
+    .paginator.images= paginate @images, param_name: 'images_page', paginated: 'images' if @images
 
   %section#videos
-    - @videos.each_slice 2 do |videos|
-      .row= render videos , col: 'col-md-6'
-  #videos-paginator= paginate @videos, param_name: 'videos_page', paginated: 'videos' if @videos
+    = render @videos
+    .paginator.videos= paginate @videos, param_name: 'videos_page', paginated: 'videos' if @videos
 
   - if can? :create, Gallery::Image
     = render 'jquery_file_upload/bootstrap_plus_ui/upload_image'
@@ -32,10 +29,10 @@
     = render 'jquery_file_upload/bootstrap_plus_ui/upload_video'
     = render 'jquery_file_upload/bootstrap_plus_ui/download_video'
 
-  .navigation
+  .navi
     - if @exposition.parent and @exposition.parent.localized?
-      = link_to t('.parent'), @exposition.parent, class: 'btn btn-default btn-sm btn-block'
+      = link_to t('.parent'), @exposition.parent
     - else
-      = link_to t('.main'), expositions_path, class: 'btn btn-default btn-sm btn-block'
+      = link_to t('.main'), expositions_path
 
 = render 'blueimp_gallery/controls'

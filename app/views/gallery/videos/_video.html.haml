@@ -1,4 +1,4 @@
-.video{class: (col if defined? col)}
+%article.video
   = manage_icons [video.exposition, video], remote: true, except: [:new, :list]
   %video.video-js.vjs-default-skin{id:"video_#{video.id}", controls: '', preload: 'auto', width: 'auto', height: 'auto', poster: video.thumb.landscape.thumb, data: { setup: '{ "plugins": { "resolutionSelector": "true" }}' }}
     %source{src: video.video.mp4, type: 'video/mp4', data: { res: 'Original'}}
@@ -16,3 +16,4 @@
       %source{src: video.video.ogv.p1080, type: 'video/ogg', data: { res: '1080p'}}
     - if video.video.ogv.p720.file.exists?
       %source{src: video.video.ogv.p720, type: 'video/ogg', data: { res: '720p'}}
+%div{class: divisible_class(video_counter)}
