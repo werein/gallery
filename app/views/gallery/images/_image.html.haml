@@ -2,7 +2,6 @@
   = manage_icons [image.exposition, image], remote: true, except: [:new, :list]
   .ilustration= link_to image_tag(image.image.square.thumb), image.image.landscape.url, class: 'gallery'
   - if image.translation
-    %header.image
-      .content
-        %h1= editable [image.exposition, image], :title, nested: :translations, nid: image.translation.id
+    %header
+      %h1= editable [image.exposition, image], :title, nested: :translations, nid: image.translation.id
 %div{class: divisible_class(image_counter)}

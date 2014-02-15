@@ -1,13 +1,17 @@
-%section#main-content
+- content_for :before_content do
+  #before-content
+    .wrapper
+      #before-content-content
+        %header.main
+          %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
+          = manage_icons @exposition
+          .manage.btn-create{class: ('hidden' unless manage?)}
+            = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
+            = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
+
+%section#content
   %article.exposition
-    %header.main
-      .content
-        %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
-        = manage_icons @exposition
-        .manage.btn-create{class: ('hidden' unless manage?)}
-          = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
-          = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
-    .description= @exposition.description.try(:html_safe)
+    .exposition-description= @exposition.description.try(:html_safe)
   .tab-content
     #new_pictures.tab-pane= render 'gallery/images/new'
     #new_video.tab-pane= render 'gallery/videos/new'

@@ -1,5 +1,9 @@
-%section#main-content
-  %header.main
-    .content
-      %h1= t '.title'
+- content_for :before_content do
+  #before-content
+    .wrapper
+      #before-content-content
+        %header.main
+          %h1= t '.title'
+
+%section#content
   = render 'form'

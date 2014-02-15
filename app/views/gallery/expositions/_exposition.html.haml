@@ -1,7 +1,6 @@
 %article.exposition
-  %header.exposition
-    .content
-      = manage_icons exposition, except: [:new, :list]
-      %h1= editable exposition, :title, nested: :translations, nid: exposition.translation.id, e: link_to(exposition.title, exposition)
+  %header
+    = manage_icons exposition, except: [:new, :list]
+    %h1= editable exposition, :title, nested: :translations, nid: exposition.translation.id, e: link_to(exposition.title, exposition)
   .ilustration= link_to image_tag(exposition.cover.square.thumb), exposition if exposition.cover?
 %div{class: divisible_class(exposition_counter)}
