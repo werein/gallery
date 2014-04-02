@@ -13,38 +13,16 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-# Use head version of engines
-gem 'core', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/core.git'
-
-gem 'auth', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/auth.git'
-
-# Core dependencies
-gem 'ckeditor-outsourced', branch: 'master',
-  git: 'git@git.imin.cz:project/ckeditor-outsourced.git'
-
-gem 'uploadable', branch: 'master',
-  git: 'git@git.imin.cz:project/uploadable.git'
-
-gem 'multiselectjs', branch: 'master',
-  git: 'git@git.imin.cz:project/multiselectjs.git'
-
-gem 'sidrjs-rails', branch: 'master',
-  git: 'git@git.imin.cz:project/sidrjs-rails.git'
-
-# Gallery dependencies
-gem 'videojs', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/videojs.git'
-
-# Test dependencies
-gem 'testable', 
-  branch: 'master',
-  git: 'git@git.imin.cz:project/testable.git'
-
 # Demo dependencies 
 gem 'compass-rails'
 gem 'bootstrap-sass', '~> 3.1'
+gem 'sass-rails', '~> 4.0.2'
+gem 'rails_admin'
+gem 'x-editable-rails'
+gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'sidekiq'
+gem 'sinatra', require: 'sidekiq/web'
+
+gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
+gem 'auth', branch: :master, git: 'git@bitbucket.org:werein/auth.git'
+gem 'ckeditor-outsourced', branch: :master, git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'

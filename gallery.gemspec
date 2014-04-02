@@ -17,9 +17,19 @@ Gem::Specification.new do |s|
   s.test_files  = Dir["test/*.*" ,"test/{cells,controllers,data,helpers,integration,models}/**/*","test/dummy/*.*", "test/dummy/{app,bin,config,db,lib}/**/*"]
 
   s.add_dependency "rails", "~> 4.0"
-  s.add_dependency "core", "~> 1.1"
+  s.add_dependency "foundationstone", "~> 0.0.1"
   s.add_dependency "auth", "~> 1.1"
   s.add_dependency 'uppr', '~> 1.0'
+  s.add_dependency 'globalize', '~> 4.0'
+  s.add_dependency 'globalize-missing', '~> 1.0'
+  s.add_dependency 'route_translator', '3.1.0'
+  s.add_dependency 'cells'
+  s.add_dependency 'ancestry'
+  s.add_dependency 'videojs'
+  s.add_dependency 'enumerize'
+  s.add_dependency 'cocoon'
   s.add_dependency "jquery-file-upload-rails", "~> 1.0"
-  s.add_dependency "blueimp-gallery", "~> 2"
+  s.add_dependency "blueimp-gallery", "~> 2.0"
+
+  s.add_development_dependency 'tuberack'
 end
