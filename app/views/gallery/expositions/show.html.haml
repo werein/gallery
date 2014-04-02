@@ -1,42 +1,37 @@
-- content_for :before_content do
-  #before-content
-    .wrapper
-      #before-content-content
-        %header.main
-          %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
-          = manage_icons @exposition
-          .manage.btn-create{class: ('hidden' unless manage?)}
-            = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
-            = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video
+%article.exposition
+  .exposition-description= @exposition.description.try(:html_safe)
+.tab-content
+  #new_pictures.tab-pane= render 'gallery/images/new'
+  #new_video.tab-pane= render 'gallery/videos/new'
 
-%section#content
-  %article.exposition
-    .exposition-description= @exposition.description.try(:html_safe)
-  .tab-content
-    #new_pictures.tab-pane= render 'gallery/images/new'
-    #new_video.tab-pane= render 'gallery/videos/new'
+%section#expositions= render @exposition.children
 
-  %section#expositions= render @exposition.children
+%section#images
+  = render @images
+  .paginator.images= paginate @images, param_name: 'images_page', paginated: 'images' if @images
 
-  %section#images
-    = render @images
-    .paginator.images= paginate @images, param_name: 'images_page', paginated: 'images' if @images
+%section#videos
+  = render @videos
+  .paginator.videos= paginate @videos, param_name: 'videos_page', paginated: 'videos' if @videos
 
-  %section#videos
-    = render @videos
-    .paginator.videos= paginate @videos, param_name: 'videos_page', paginated: 'videos' if @videos
+- if can? :create, Gallery::Image
+  = render 'jquery_file_upload/bootstrap_plus_ui/upload_image'
+  = render 'jquery_file_upload/bootstrap_plus_ui/download_image'
+- if can? :create, Gallery::Video
+  = render 'jquery_file_upload/bootstrap_plus_ui/upload_video'
+  = render 'jquery_file_upload/bootstrap_plus_ui/download_video'
 
-  - if can? :create, Gallery::Image
-    = render 'jquery_file_upload/bootstrap_plus_ui/upload_image'
-    = render 'jquery_file_upload/bootstrap_plus_ui/download_image'
-  - if can? :create, Gallery::Video
-    = render 'jquery_file_upload/bootstrap_plus_ui/upload_video'
-    = render 'jquery_file_upload/bootstrap_plus_ui/download_video'
-
-  .navi
-    - if @exposition.parent and @exposition.parent.localized?
-      = link_to t('.parent'), @exposition.parent
-    - else
-      = link_to t('.main'), expositions_path
-
+.navi
+  - if @exposition.parent and @exposition.parent.localized?
+    = link_to t('.parent'), @exposition.parent
+  - else
+    = link_to t('.main'), expositions_path
 = render 'blueimp_gallery/controls'
+
+- content_for :bow do
+  %header.main
+    %h1= editable @exposition, :title, nested: :translations, nid: @exposition.translation.id, placement: :bottom
+    = manage_icons @exposition
+    .manage.btn-create{class: ('hidden' unless manage?)}
+      = link_to gt('plus', t('.upload.pictures')), '#new_pictures', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Image
+      = link_to gt('plus', t('.upload.videos')), '#new_video', class: 'btn btn-text btn-success manage', data: { toggle: 'tab'} if can? :create, Gallery::Video

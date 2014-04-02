@@ -1,10 +1,6 @@
-- content_for :before_content do
-  #before-content
-    .wrapper
-      #before-content-content
-        %header.main
-          %h1= t '.title'
-          = create_button Gallery::Exposition
+#expositions= render @expositions
 
-%section#content
-  #expositions= render @expositions
+- content_for :bow do
+  %header.main
+    %h1= t '.title'
+    = create_button Gallery::Exposition
