@@ -12,7 +12,7 @@ module Gallery
 
     has_ancestry
 
-    mount_uploader :cover, Uploadable::Image
+    mount_uploader :cover, Uppr::Image
     store_in_background :cover
 
     scope :latest, -> { order('gallery_expositions.created_at DESC') }

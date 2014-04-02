@@ -1,5 +1,6 @@
 require 'core'
 require 'auth'
+require 'uppr'
 require 'videojs'
 require 'jquery-file-upload-rails'
 require 'blueimp/gallery'

@@ -8,7 +8,7 @@ module Gallery
 
     belongs_to :exposition
 
-    mount_uploader :image, Uploadable::Image
+    mount_uploader :image, Uppr::Image
     store_in_background :image
 
     paginates_per 12

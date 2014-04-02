@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.0"
   s.add_dependency "core", "~> 1.1"
   s.add_dependency "auth", "~> 1.1"
+  s.add_dependency 'uppr', '~> 1.0'
   s.add_dependency "jquery-file-upload-rails", "~> 1.0"
   s.add_dependency "blueimp-gallery", "~> 2"
 end

@@ -7,9 +7,9 @@ module Gallery
 
     belongs_to :exposition
 
-    mount_uploader :thumb, Uploadable::Image
+    mount_uploader :thumb, Uppr::Image
     store_in_background :thumb
-    mount_uploader :video, Uploadable::Video
+    mount_uploader :video, Uppr::Video
     store_in_background :video
 
     paginates_per 2
