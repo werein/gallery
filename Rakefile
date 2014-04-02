@@ -32,5 +32,3 @@ end
 
 
 task default: :test
-
-load 'tasks/i18n-tasks.rake'
