@@ -21,7 +21,7 @@ RailsAdmin.config do |config|
     nestable_tree({
       position_field: :position,
       max_depth: 4
-    })
+    }) if defined? RailsAdminNestable
   end
   config.model Gallery::Exposition::Translation do
     visible false
