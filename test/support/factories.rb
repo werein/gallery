@@ -15,14 +15,14 @@ FactoryGirl.define do
 
   factory :exposition_translation, class: Gallery::Exposition::Translation do
     title 'Marilyn Monroe'
-    slug 'marilyn-monroe'
+    sequence(:slug) {|n| "marilyn-monroe-#{n}" }
     locale 'en'
     description 'MM'
   end
 
   factory :exposition_cs_translation, class: Gallery::Exposition::Translation do
     title 'Marilyn Monroe'
-    slug 'marilyn-monroe'
+    sequence(:slug) {|n| "marilyn-monroe-#{n}" }
     locale 'cs'
     description 'MM'
   end
