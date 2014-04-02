@@ -4,7 +4,7 @@ module Gallery
     validates :image, :exposition, presence: :true
 
     translates :title, :description
-    include Core::Concerns::Localizable
+    accepts_nested_attributes_for :translations, allow_destroy: true
 
     belongs_to :exposition
 

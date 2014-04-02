@@ -3,7 +3,7 @@ module Gallery
     include Gallery::Engine.routes.url_helpers
     validates :video, :exposition, presence: true
     translates :title, :description
-    include Core::Concerns::Localizable
+    accepts_nested_attributes_for :translations, allow_destroy: true
 
     belongs_to :exposition
 

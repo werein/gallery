@@ -2,7 +2,7 @@ module Gallery
   class Exposition < ActiveRecord::Base
     translates :slug, :title, :description
     validates :translations, presence: true
-    include Core::Concerns::Localizable
+    accepts_nested_attributes_for :translations, allow_destroy: true
 
     has_many :images, dependent: :destroy
     accepts_nested_attributes_for :images, allow_destroy: true
