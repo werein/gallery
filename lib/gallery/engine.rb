@@ -1,5 +1,4 @@
 require 'foundationstone'
-require 'auth'
 require 'uppr'
 require 'globalize'
 require 'globalize/missing'
@@ -10,6 +9,7 @@ require 'videojs'
 require 'cocoon'
 require 'jquery-file-upload-rails'
 require 'blueimp/gallery'
+require 'cancancan'
 
 module Gallery
   class Engine < ::Rails::Engine

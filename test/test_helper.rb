@@ -40,3 +40,5 @@ class ActiveSupport::TestCase
 end
 
 WebMock.disable_net_connect! allow: %w(coveralls.io)
+
+Gallery.user_class = 'Tuberack::DummyUser'

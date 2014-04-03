@@ -1,13 +1,6 @@
 include ActionDispatch::TestProcess
 
 FactoryGirl.define do
-  factory :user, class: Auth::User do 
-    email 'test@gmail.com'
-    password '12345678'
-  end
-end
-
-FactoryGirl.define do
   factory :exposition, class: Gallery::Exposition do
     cover { fixture_file_upload('test/data/mm.jpg') }
     translations {[ association(:exposition_translation)]}

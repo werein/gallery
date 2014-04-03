@@ -1,10 +1,6 @@
 require 'test_helper'
 
 describe "Rails Admin Feature" do
-  let(:current_user)  { create(:user) }
-  before              { integration_login }
-  after               { Warden.test_reset! }
-
   it "must have access to create new exposition" do 
     visit rails_admin.new_path(model_name: 'gallery~exposition')
     within '#new_gallery_exposition' do 

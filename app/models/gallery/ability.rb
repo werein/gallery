@@ -3,7 +3,7 @@ module Gallery
     include CanCan::Ability
 
     def initialize(user)
-      user ||= Auth::User.new
+      user ||= Gallery.user_class.new
 
       cannot :manage, :all
       can :read, :all
