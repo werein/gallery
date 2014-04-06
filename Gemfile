@@ -21,5 +21,6 @@ gem 'rails_admin'
 gem 'x-editable-rails'
 gem 'simple_form', github: 'plataformatec/simple_form'
 
+gem 'tuberack', branch: :master, github: 'werein/tuberack'
 gem 'foundationstone', branch: :master, github: 'werein/foundationstone'
 gem 'ckeditor-outsourced', branch: :master, git: 'git@bitbucket.org:werein/ckeditor-outsourced.git'
