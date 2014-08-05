@@ -1,0 +1,64 @@
+#gallery.expositions
+  #content
+    .navi
+      margin-top: 20px
+  #images, #expositions
+    +make-row
+    article.image, article.exposition
+      +make-sm-column(6)
+      +make-md-column(4)
+      +make-lg-column(3)
+      > .ilustration
+        img
+          @extend .img-responsive
+    .div-by-2
+      @extend .clearfix
+      @extend .visible-sm
+    .div-by-3
+      @extend .clearfix
+      @extend .visible-md
+    .div-by-4
+      @extend .clearfix
+      @extend .visible-lg
+    .paginator
+      +make-md-column(12)
+  #images
+    article.image
+      padding-top: 15px
+      padding-bottom: 15px
+    .manage.btn-manage
+      top: 20px
+      left: 20px
+      bottom: auto
+      right: auto
+  #videos
+    +make-row
+    margin-top: 20px
+    .video-js
+      padding-top: 56.25%
+    .vjs-fullscreen 
+      padding-top: 0px
+    .video
+      +make-md-column(6)
+    .div-by-2
+      @extend .clearfix
+      @extend .visible-md
+  #expositions
+    .manage.btn-manage
+      top: 20px
+      right: 20px
+      bottom: auto
+      left: auto
+
+#gallery
+  #translations
+    position: relative
+    fieldset
+      margin: 15px 0
+    .links
+      position: absolute
+      right: 0
+      top: 0
+    .remove
+      text-align: right
+      margin: 15px 0
