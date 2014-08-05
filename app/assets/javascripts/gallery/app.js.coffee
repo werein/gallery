@@ -10,5 +10,5 @@
 # Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
-#= require gallery/requirements
-#= require gallery/default
+#= require gallery/dependencies
+#= require gallery
