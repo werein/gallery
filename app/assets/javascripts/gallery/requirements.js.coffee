@@ -6,5 +6,4 @@
 #= require jquery-file-upload/basic-plus-ui
 #= require jquery-file-upload/cors/jquery.xdr-transport
 #= require cocoon
-#= require ckeditor/override
 #= require ckeditor/init
