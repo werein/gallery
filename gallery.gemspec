@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'uppr', '~> 1.0'
   s.add_dependency 'globalize', '~> 4.0'
   s.add_dependency 'globalize-missing', '~> 1.0'
-  s.add_dependency 'route_translator' '~> 3.2.4'
+  s.add_dependency 'route_translator', '~> 3.2.4'
   s.add_dependency 'cells'
   s.add_dependency 'ancestry'
   s.add_dependency 'videojs'
